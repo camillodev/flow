@@ -97,7 +97,7 @@ export default function InsightsPage() {
     .sort((a, b) => a.date.localeCompare(b.date))
     .map((c) => ({
       date: new Date(c.date).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' }),
-      qualidade: c.sleepQuality,
+      qualidade: c.sleepQuality!,
     }))
 
   // Consistência de hábitos
