@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-calm: 219 95% 72%; /* azul-claro */
+    --color-focus: 43 96% 56%; /* dourado */
+    --color-connect: 142 71% 45%; /* verde */
+    --color-recover: 262 52% 70%; /* lilás */
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer utilities {
+  .mode-calm {
+    @apply bg-blue-100 text-blue-900;
+  }
+
+  .mode-focus {
+    @apply bg-yellow-100 text-yellow-900;
+  }
+
+  .mode-connect {
+    @apply bg-green-100 text-green-900;
+  }
+
+  .mode-recover {
+    @apply bg-purple-100 text-purple-900;
+  }
+}

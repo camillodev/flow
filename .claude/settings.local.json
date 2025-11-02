@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(pnpm install:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npx playwright install chromium)",
+      "Bash(npx playwright test:*)"
     ],
     "deny": [],
     "ask": []

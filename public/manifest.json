@@ -1,0 +1,20 @@
+{
+  "name": "Flow - Copiloto de Bem-Estar",
+  "short_name": "Flow",
+  "description": "PWA offline-first para ritmo, constância e estabilidade emocional",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "lifestyle", "productivity"],
+  "screenshots": []
+}

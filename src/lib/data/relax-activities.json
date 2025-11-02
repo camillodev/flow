@@ -1,0 +1,98 @@
+[
+  {
+    "id": "breathing",
+    "name": "Respiração consciente 5min",
+    "emoji": "🫁",
+    "category": "mindfulness",
+    "duration": "5min",
+    "description": "Respire fundo e solte o ar lentamente. Foque apenas na respiração."
+  },
+  {
+    "id": "walk",
+    "name": "Caminhada rápida",
+    "emoji": "🚶",
+    "category": "movement",
+    "duration": "10min",
+    "description": "Dê uma volta no quarteirão. Observe os sons ao redor."
+  },
+  {
+    "id": "stretch",
+    "name": "Alongamento suave",
+    "emoji": "🧘",
+    "category": "movement",
+    "duration": "5min",
+    "description": "Estique braços, pernas, pescoço. Sinta cada músculo relaxar."
+  },
+  {
+    "id": "tea",
+    "name": "Chá sem telas",
+    "emoji": "🍵",
+    "category": "pause",
+    "duration": "10min",
+    "description": "Prepare um chá e tome devagar, sem celular ou telas."
+  },
+  {
+    "id": "music",
+    "name": "Música calma",
+    "emoji": "🎵",
+    "category": "sensory",
+    "duration": "10min",
+    "description": "Escute uma música tranquila. Apenas ouça, sem fazer nada."
+  },
+  {
+    "id": "shower",
+    "name": "Banho relaxante",
+    "emoji": "🚿",
+    "category": "self-care",
+    "duration": "15min",
+    "description": "Banho morno, foque nas sensações da água no corpo."
+  },
+  {
+    "id": "journal",
+    "name": "Escrever 3 frases",
+    "emoji": "✍️",
+    "category": "reflection",
+    "duration": "5min",
+    "description": "Escreva 3 coisas que te fizeram bem hoje, por menores que sejam."
+  },
+  {
+    "id": "gratitude",
+    "name": "Lista de gratidão",
+    "emoji": "🙏",
+    "category": "reflection",
+    "duration": "5min",
+    "description": "Pense em 5 coisas pelas quais você é grato hoje."
+  },
+  {
+    "id": "organize",
+    "name": "Organizar espaço",
+    "emoji": "🧹",
+    "category": "practical",
+    "duration": "10min",
+    "description": "Arrume um cantinho da casa. Foco no processo, não no resultado."
+  },
+  {
+    "id": "plant",
+    "name": "Cuidar das plantas",
+    "emoji": "🌱",
+    "category": "connection",
+    "duration": "5min",
+    "description": "Regue, observe, toque nas plantas. Conexão com vida natural."
+  },
+  {
+    "id": "draw",
+    "name": "Desenho livre",
+    "emoji": "🎨",
+    "category": "creative",
+    "duration": "10min",
+    "description": "Rabisque sem julgamento. Não precisa ser bonito."
+  },
+  {
+    "id": "cold-water",
+    "name": "Água fria no rosto",
+    "emoji": "❄️",
+    "category": "reset",
+    "duration": "2min",
+    "description": "Lave o rosto com água gelada. Reset imediato do sistema nervoso."
+  }
+]
