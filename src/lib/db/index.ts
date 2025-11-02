@@ -107,6 +107,16 @@ export async function saveDailyState(state: DailyState): Promise<void> {
   await db.put('dailyStates', state)
 }
 
+export async function getDailyStates(
+  userId: string,
+  startDate: string,
+  endDate: string
+): Promise<DailyState[]> {
+  const db = await initDB()
+  const allStates = await db.getAllFromIndex('dailyStates', 'by-user', userId)
+  return allStates.filter((s) => s.date >= startDate && s.date <= endDate)
+}
+
 export async function getCheckIns(
   userId: string,
   startDate: string,

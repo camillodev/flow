@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { getTodayState, getHabits, saveDailyState } from '@/lib/db'
 import { getModeConfig } from '@/lib/utils/day-mode'
+import { getRandomEmpatheticMessage } from '@/lib/utils/empathic-messages'
 import type { DailyState, Habit } from '@/lib/db/types'
 
 export default function HomePage() {
@@ -12,6 +13,7 @@ export default function HomePage() {
   const [dailyState, setDailyState] = useState<DailyState | null>(null)
   const [habits, setHabits] = useState<Habit[]>([])
   const [loading, setLoading] = useState(true)
+  const [empatheticMessage, setEmpatheticMessage] = useState<string | null>(null)
 
   useEffect(() => {
     loadData()
@@ -47,9 +49,16 @@ export default function HomePage() {
     }
   }
 
+  function showEmpatheticMessage() {
+    const message = getRandomEmpatheticMessage()
+    setEmpatheticMessage(message)
+    setTimeout(() => setEmpatheticMessage(null), 3000)
+  }
+
   async function toggleTop3(index: number) {
     if (!dailyState) return
 
+    const wasCompleted = dailyState.top3Completed[index]
     const newCompleted = [...dailyState.top3Completed]
     newCompleted[index] = !newCompleted[index]
 
@@ -62,25 +71,35 @@ export default function HomePage() {
 
     await saveDailyState(updatedState)
     setDailyState(updatedState)
+
+    // Mostrar mensagem empática ao completar (não ao descompletar)
+    if (!wasCompleted && newCompleted[index]) {
+      showEmpatheticMessage()
+    }
   }
 
   async function toggleHabit(habitId: string) {
     if (!dailyState) return
 
-    const isCompleted = dailyState.habitsCompleted.includes(habitId)
-    const newHabits = isCompleted
+    const wasCompleted = dailyState.habitsCompleted.includes(habitId)
+    const newHabits = wasCompleted
       ? dailyState.habitsCompleted.filter((id) => id !== habitId)
       : [...dailyState.habitsCompleted, habitId]
 
     const updatedState = {
       ...dailyState,
       habitsCompleted: newHabits,
-      microwins: dailyState.microwins + (isCompleted ? -1 : 1),
+      microwins: dailyState.microwins + (wasCompleted ? -1 : 1),
       updatedAt: new Date().toISOString(),
     }
 
     await saveDailyState(updatedState)
     setDailyState(updatedState)
+
+    // Mostrar mensagem empática ao completar (não ao descompletar)
+    if (!wasCompleted) {
+      showEmpatheticMessage()
+    }
   }
 
   if (loading) {

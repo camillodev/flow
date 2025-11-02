@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import { Inter } from 'next/font/google'
 import { registerServiceWorker } from '@/lib/register-sw'
+import InstallPWA from '@/components/InstallPWA'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -29,7 +30,10 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <InstallPWA />
+      </body>
     </html>
   )
 }
