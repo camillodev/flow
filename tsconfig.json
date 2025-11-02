@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "types": ["vitest", "@testing-library/jest-dom"],
+    "jsx": "react-jsx"
+  }
+}

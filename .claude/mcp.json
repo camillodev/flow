@@ -1,0 +1,23 @@
+{
+  "servers": [
+    {
+      "name": "process",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-process"],
+      "env": {}
+    },
+    {
+      "name": "git",
+      "command": "npx",
+      "env": { "GITHUB_TOKEN": "${env:GITHUB_TOKEN}" },
+      "args": ["-y", "mcp-github", "@modelcontextprotocol/server-git", "--repo", "."]
+    },
+    {
+      "name": "fs",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "--root", "."]
+    }
+  ],
+  "timeoutMs": 30000,
+  "maxRequestTokens": 2000
+}
