@@ -5,7 +5,10 @@
       "Bash(npm install:*)",
       "Bash(npx playwright install chromium)",
       "Bash(npx playwright test:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfix: switch from pnpm to npm for Vercel deployment\n\n- Remove pnpm-lock.yaml (outdated)\n- Add .npmrc to enforce npm usage\n- Use existing package-lock.json for dependency resolution\n\nFixes Vercel build error: ERR_PNPM_OUTDATED_LOCKFILE\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

@@ -3,7 +3,23 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { getCheckIns, getInsights, getHabits, getTodayState } from '@/lib/db'
+import {
+  LineChart,
+  Line,
+  BarChart,
+  Bar,
+  PieChart,
+  Pie,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts'
+import { getCheckIns, getInsights } from '@/lib/db'
+import { generateWeeklySummary } from '@/lib/utils/empathic-messages'
 import type { CheckIn, Insight } from '@/lib/db/types'
 
 export default function InsightsPage() {
