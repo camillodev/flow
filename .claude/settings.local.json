@@ -4,7 +4,8 @@
       "Bash(pnpm install:*)",
       "Bash(npm install:*)",
       "Bash(npx playwright install chromium)",
-      "Bash(npx playwright test:*)"
+      "Bash(npx playwright test:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
